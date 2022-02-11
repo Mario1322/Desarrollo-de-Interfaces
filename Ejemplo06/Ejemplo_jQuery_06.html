@@ -29,6 +29,26 @@
             $(this).animate({ "left": "+=50px", "top": "+=50px" }, "slow")
                 .animate({ "left": "-=50px", "top": "-=10px" }, "slow");
         });
+        $("#bloque").mouseenter(function () {
+            $(this).css({"background-color": "#FF0000","color" : "white"}).text("Hola!");
+        });
+        $("#bloque").mouseleave(function () {
+            $(this).css({"background-color" : "#0000FF","color" : "white"}).text("Adios!");
+        });
+        $("body").keydown(function(evento){
+            if(evento.which == 37){//tecla izquierda del teclado
+                $("#bloque").animate({ "left": "-=50px"}, "slow")
+            }
+            if(evento.which == 39){//tecla izquierda del teclado
+                $("#bloque").animate({ "left": "+=50px"}, "slow")
+            }
+            if(evento.which == 38){//tecla izquierda del teclado
+                $("#bloque").animate({ "top": "-=50px"}, "slow")
+            }
+            if(evento.which == 40){//tecla izquierda del teclado
+                $("#bloque").animate({ "top": "+=50px"}, "slow")
+            }
+        });
     </script>
 </body>
 
