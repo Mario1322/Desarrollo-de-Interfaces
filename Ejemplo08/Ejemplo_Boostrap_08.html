@@ -10,16 +10,16 @@
 </head>
 
 <body>
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="../img/HarryPotter1.jpeg" class="d-block w-100" alt="...">
+                <img src="../img/HarryPotter1.jpeg" class="d-block w-100" alt="HarryPotter1">
             </div>
             <div class="carousel-item">
-                <img src="../img/HarryPotter2.jpeg" class="d-block w-100" alt="...">
+                <img src="../img/HarryPotter2.jpeg" class="d-block w-100" alt="HarryPotter2">
             </div>
             <div class="carousel-item">
-                <img src="../img/HarryPotter3.jpeg" class="d-block w-100" alt="...">
+                <img src="../img/HarryPotter3.jpeg" class="d-block w-100" alt="HarryPotter3">
             </div>
         </div>
     </div>
@@ -28,7 +28,10 @@
     <script src="../js/jquery-3.6.0.min.js"></script>
     <script>
         var myCarousel = document.querySelector('#myCarousel')
-        var carousel = new bootstrap.Carousel(myCarousel)
+        var carousel = new bootstrap.Carousel(myCarousel,{
+            interval: 200,
+            wrap: false
+        })
     </script>
 </body>
 
