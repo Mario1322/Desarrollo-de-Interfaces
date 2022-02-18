@@ -24,7 +24,20 @@
             $(this).toggle("blind");
         });
         $('#fecha').datepicker({
-            firstDay : 1
+            firstDay : 1,
+            changeMonth :  true,
+            changeYear : true,
+            yearRange : "-50: +10",
+            showButtonPanel : true,
+            numberOfMonths : [3,1],
+            currentText: "HOY",
+            monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
+            'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+        monthNamesShort: ['Ene','Feb','Mar','Abr','May','Jun',
+            'Jul','Ago','Sep','Oct','Nov','Dic'],
+        dayNames: ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],
+        dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sa'],
         })
     </script>
 </body>
