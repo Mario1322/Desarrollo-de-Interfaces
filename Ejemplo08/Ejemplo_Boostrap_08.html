@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,28 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
+
 <body>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="..." class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+            </div>
+        </div>
+    </div>
     <script src="../js/jquery-ui.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        var myCarousel = document.querySelector('#myCarousel')
+        var carousel = new bootstrap.Carousel(myCarousel)
+    </script>
 </body>
+
 </html>
