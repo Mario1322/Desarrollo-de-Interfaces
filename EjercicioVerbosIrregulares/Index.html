@@ -27,29 +27,48 @@
     <div class="container">
         <div class="row d-grid">
             <button id="castellano" class="btn btn-secondary"> español</button>
+            <br>
         </div>
         <div class="row">
             <div class="col d-grid">
+                <div id="buton1"></div>
                 <button id="boton1" class="btn btn-secondary">tiempo 1</button>
             </div>
             <div class="col d-grid">
-                <button id="boton2" class="btn btn-secondary">tiempo 2</button>
+                <div id="buton1"></div>
             </div>
             <div class="col d-grid">
-                <button id="boton3" class="btn btn-secondary">tiempo 3</button>
+                <div id="buton1"></div>
             </div>
         </div>
         <script>
             function eligeverbo() {
                 var verboElegido = Math.floor(Math.random() * verbos.length);
-                console.log(verboElegido)
-                document.getElementById("castellano").innerHTML = verbos[verboElegido][3];
-                document.getElementById("boton1").innerHTML = verbos[verboElegido][0];
-                document.getElementById("boton2").innerHTML = verbos[verboElegido][1];
-                document.getElementById("boton3").innerHTML = verbos[verboElegido][2];
+                var AdivinaVerbo = Math.floor(Math.random() * 3);
+                console.log(AdivinaVerbo)
+                document.getElementById("castellano").innerHTML = verbos[verboElegido[3]];
+                if (AdivinaVerbo == 0) {
+                    document.getElementById("boton1").innerHTML = '<input id="caja" class="form-control">';
+                }
+                else {
+                    document.getElementById("boton1").innerHTML = verbos[verboElegido][0];
+                }
+                if (AdivinaVerbo == 1) {
+                    document.getElementById("boton2").innerHTML = '<input id="caja" class="form-control ">';
+                }
+                else {
+                    document.getElementById("boton2").innerHTML = verbos[verboElegido][1];
+                }
+                if (AdivinaVerbo == 2) {
+                    document.getElementById("boton3").innerHTML = '<input id="caja" class="form-control ">';
+                }
+                else {
+                    document.getElementById("boton3").innerHTML = verbos[verboElegido][2];
+                }
             }
             eligeverbo();
         </script>
+        <button id="boton1" class="btn btn-secondary">tiempo 1</button>
 </body>
 
 </html>
