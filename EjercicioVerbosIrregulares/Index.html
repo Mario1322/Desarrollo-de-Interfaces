@@ -40,12 +40,34 @@
                 <div id="boton3"></div>
             </div>
         </div>
+        <br>
+        <div class="row">
+            <button id="botonresultado" class="btn col-12 btn-dark" onclick="comprueba()">Comprobar</button>
+        </div>
         <script>
+            var AdivinaVerbo = 0;
+            var verboElegido = 0;
+            var jugando = 0;
+
+            function comprueba() {
+                if(comprueba == 0 ){
+                document.getElementById('botonresultado').classList.remove('btn-dark');
+                var verboLeido = document.getElementById('caja').value;
+                if(verbos[verboElegido][AdivinaVerbo]== verboLeido){
+                    document.getElementById('botonresultado').classList.add('btn-success');
+                    document.getElementById('botonresultado').innerText = "CORRECTO"
+                }else{
+                    document.getElementById('botonresultado').classList.add('btn-danger');
+                    document.getElementById('botonresultado').innerText =verbos[verboElegido][AdivinaVerbo];
+                }
+            }
+            }
+
             function eligeverbo() {
-                var verboElegido = Math.floor(Math.random() * verbos.length);
-                var AdivinaVerbo = Math.floor(Math.random() * 3);
-                console.log(AdivinaVerbo)
-                document.getElementById("castellano").innerHTML = verbos[verboElegido[3]];
+                verboElegido = Math.floor(Math.random() * verbos.length);
+                AdivinaVerbo = Math.floor(Math.random() * 3);
+                console.log(verbos[verboElegido][AdivinaVerbo]);
+                document.getElementById("castellano").innerHTML = verbos[verboElegido][3];
                 if (AdivinaVerbo == 0) {
                     document.getElementById("boton1").innerHTML = '<input id="caja" class="form-control">';
                 }
