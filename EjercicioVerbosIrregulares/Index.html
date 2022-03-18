@@ -31,13 +31,13 @@
         </div>
         <div class="row">
             <div class="col d-grid">
-                <div id="buton1"></div>
+                <div id="boton1"></div>
             </div>
             <div class="col d-grid">
-                <div id="buton1"></div>
+                <div id="boton2"></div>
             </div>
             <div class="col d-grid">
-                <div id="buton1"></div>
+                <div id="boton3"></div>
             </div>
         </div>
         <script>
@@ -50,24 +50,23 @@
                     document.getElementById("boton1").innerHTML = '<input id="caja" class="form-control">';
                 }
                 else {
-                    document.getElementById("boton1").innerHTML = verbos[verboElegido][0];
+                    document.getElementById("boton1").innerHTML = '<button id="boton1" class="btn btn-secondary col-12">' + verbos[verboElegido][0] + '</button>';
                 }
                 if (AdivinaVerbo == 1) {
                     document.getElementById("boton2").innerHTML = '<input id="caja" class="form-control ">';
                 }
                 else {
-                    document.getElementById("boton2").innerHTML = verbos[verboElegido][1];
+                    document.getElementById("boton2").innerHTML = '<button id="boton2" class="btn btn-secondary col-12">' + verbos[verboElegido][1] + '</button>';
                 }
                 if (AdivinaVerbo == 2) {
                     document.getElementById("boton3").innerHTML = '<input id="caja" class="form-control ">';
                 }
                 else {
-                    document.getElementById("boton3").innerHTML = verbos[verboElegido][2];
+                    document.getElementById("boton3").innerHTML = '<button id="boton3" class="btn btn-secondary col-12">' + verbos[verboElegido][2] + '</button>';
                 }
             }
             eligeverbo();
         </script>
-        <button id="boton1" class="btn btn-secondary">tiempo 1</button>
 </body>
 
 </html>
