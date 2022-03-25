@@ -22,10 +22,11 @@
             return Math.floor(Math.random() * (max - min + 1) + min)
         }
         const rndInt = randomIntFromInterval(0, 146)
-        console.log(rndInt)
+        console.log(rndInt);
     </script>
     <div class="container">
         <div class="row d-grid">
+            <button id="marcador" class="btn btn-primary">0</button>
             <button id="castellano" class="btn btn-secondary"> español</button>
             <br>
         </div>
@@ -44,51 +45,78 @@
         <div class="row">
             <button id="botonresultado" class="btn col-12 btn-dark" onclick="comprueba()">Comprobar</button>
         </div>
-        <script>
-            var AdivinaVerbo = 0;
-            var verboElegido = 0;
-            var jugando = 0;
-
-            function comprueba() {
-                if(comprueba == 0 ){
+    </div>
+    <script>
+        var AdivinaVerbo = 0;
+        var verboElegido = 0;
+        var jugando = 0;
+        var marcador = 0;
+        function comprueba() {
+            if (jugando == 0) {
+                jugando = 1;
                 document.getElementById('botonresultado').classList.remove('btn-dark');
-                var verboLeido = document.getElementById('caja').value;
-                if(verbos[verboElegido][AdivinaVerbo]== verboLeido){
+                verboLeido = document.getElementById('caja').value;
+                if (verbos[verboElegido][AdivinaVerbo] == verboLeido) {
+                    marcador++;
                     document.getElementById('botonresultado').classList.add('btn-success');
                     document.getElementById('botonresultado').innerText = "CORRECTO"
-                }else{
+                } else {
+                    marcador = 0;
                     document.getElementById('botonresultado').classList.add('btn-danger');
-                    document.getElementById('botonresultado').innerText =verbos[verboElegido][AdivinaVerbo];
+                    document.getElementById('botonresultado').innerText = verbos[verboElegido][AdivinaVerbo];
                 }
+            } else {
+                document.getElementById('botonresultado').classList.add('btn-dark');
+                document.getElementById('botonresultado').innerText = "COMPROBAR";
+                jugando =0;
+                eligeverbo();
             }
-            }
+            document.getElementById('marcador').innerText = marcador;
+        }
 
-            function eligeverbo() {
-                verboElegido = Math.floor(Math.random() * verbos.length);
-                AdivinaVerbo = Math.floor(Math.random() * 3);
-                console.log(verbos[verboElegido][AdivinaVerbo]);
-                document.getElementById("castellano").innerHTML = verbos[verboElegido][3];
-                if (AdivinaVerbo == 0) {
-                    document.getElementById("boton1").innerHTML = '<input id="caja" class="form-control">';
-                }
-                else {
-                    document.getElementById("boton1").innerHTML = '<button id="boton1" class="btn btn-secondary col-12">' + verbos[verboElegido][0] + '</button>';
-                }
-                if (AdivinaVerbo == 1) {
-                    document.getElementById("boton2").innerHTML = '<input id="caja" class="form-control ">';
-                }
-                else {
-                    document.getElementById("boton2").innerHTML = '<button id="boton2" class="btn btn-secondary col-12">' + verbos[verboElegido][1] + '</button>';
-                }
-                if (AdivinaVerbo == 2) {
-                    document.getElementById("boton3").innerHTML = '<input id="caja" class="form-control ">';
-                }
-                else {
-                    document.getElementById("boton3").innerHTML = '<button id="boton3" class="btn btn-secondary col-12">' + verbos[verboElegido][2] + '</button>';
-                }
+        function eligeverbo() {
+            verboElegido = Math.floor(Math.random() * verbos.length);
+            AdivinaVerbo = Math.floor(Math.random() * 3);
+            console.log(verbos[verboElegido][AdivinaVerbo]);
+            document.getElementById("castellano").innerHTML = verbos[verboElegido][3];
+            if (AdivinaVerbo == 0) {
+                document.getElementById("boton1").innerHTML = '<input id="caja" class="form-control">';
             }
-            eligeverbo();
-        </script>
+            else {
+                document.getElementById("boton1").innerHTML = '<button id="boton1" class="btn btn-secondary col-12">' + verbos[verboElegido][0] + '</button>';
+            }
+            if (AdivinaVerbo == 1) {
+                document.getElementById("boton2").innerHTML = '<input id="caja" class="form-control ">';
+            }
+            else {
+                document.getElementById("boton2").innerHTML = '<button id="boton2" class="btn btn-secondary col-12">' + verbos[verboElegido][1] + '</button>';
+            }
+            if (AdivinaVerbo == 2) {
+                document.getElementById("boton3").innerHTML = '<input id="caja" class="form-control ">';
+            }
+            else {
+                document.getElementById("boton3").innerHTML = '<button id="boton3" class="btn btn-secondary col-12">' + verbos[verboElegido][2] + '</button>';
+            }
+        }
+        eligeverbo();
+        function nivel() {
+            if (value = 1) {
+
+            }
+        }
+    </script>
+    <select class="form-select" aria-label="Default select example">
+        <option selected>Escoge tu nivel</option>
+        <option value="1">Nivel 1</option>
+        <option value="2">Nivel 2</option>
+        <option value="3">Nivel 3</option>
+        <option value="4">Nivel 4</option>
+        <option value="5">Nivel 5</option>
+        <option value="6">Nivel 6</option>
+        <option value="7">Nivel 7</option>
+        <option value="8">Nivel 8</option>
+        <option value="9">Nivel 9</option>
+    </select>
 </body>
 
 </html>
