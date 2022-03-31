@@ -18,16 +18,16 @@
     <script src="../js/listaVerbos.js"></script>
     <!--console.log(verbos[rndInt][0])-->
     <script>
-        function randomIntFromInterval(min, max) { // min and max included
+       /*  function randomIntFromInterval(min, max) { // min and max included
             return Math.floor(Math.random() * (max - min + 1) + min)
         }
         const rndInt = randomIntFromInterval(0, 146)
-        console.log(rndInt);
+        console.log(rndInt); */
     </script>
     <div class="container">
         <div class="row d-grid">
             <br>
-            <button id="marcador" class="btn btn-success"disable>0</button>
+            <button id="marcador" class="btn btn-success" disable>0</button>
             <br>
             <button id="info" class="btn btn-success"><img
                     src="data:image/png;base64,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"
@@ -59,6 +59,12 @@
         var verboElegido = 0;
         var jugando = 0;
         var marcador = 0;
+        var Irregulares = 0;
+        function nivel(xoxas) {
+            Irregulares = xoxas;
+            eligeverbo();
+
+        }
         function comprueba() {
             if (jugando == 0) {
                 jugando = 1;
@@ -83,9 +89,10 @@
         }
 
         function eligeverbo() {
-            verboElegido = Math.floor(Math.random() * verbos.length);
+            verboElegido = Math.floor(Math.random() * Irregulares);
             AdivinaVerbo = Math.floor(Math.random() * 3);
-            console.log(verbos[verboElegido][AdivinaVerbo]);
+           console.log(verbos[verboElegido][AdivinaVerbo]);
+           console.log(verboElegido);
             document.getElementById("castellano").innerHTML = verbos[verboElegido][3];
             if (AdivinaVerbo == 0) {
                 document.getElementById("boton1").innerHTML = '<input id="caja" class="form-control">';
@@ -107,24 +114,26 @@
             }
         }
         eligeverbo();
-        function nivel() {
-            if (value = 1) {
-
-            }
-        }
+        
     </script>
-    <select class="form-select" aria-label="Default select example">
-        <option selected>Escoge tu nivel</option>
-        <option value="1">Nivel 1</option>
-        <option value="2">Nivel 2</option>
-        <option value="3">Nivel 3</option>
-        <option value="4">Nivel 4</option>
-        <option value="5">Nivel 5</option>
-        <option value="6">Nivel 6</option>
-        <option value="7">Nivel 7</option>
-        <option value="8">Nivel 8</option>
-        <option value="9">Nivel 9</option>
-    </select>
+    <div class="container">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-2"><button class="btn btn-primary" onclick="nivel(10)">10</button></div>
+            <div class="col-2"><button class="btn btn-primary" onclick="nivel(20)">20</button></div>
+            <div class="col-2"><button class="btn btn-primary" onclick="nivel(30)">30</button></div>
+            <div class="col-2"><button class="btn btn-primary" onclick="nivel(40)">40</button></div>
+            <div class="col-2"><button class="btn btn-primary" onclick="nivel(50)">50</button></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-2"><button class="btn btn-primary" onclick="nivel(60)">60</button></div>
+            <div class="col-2"><button class="btn btn-primary" onclick="nivel(70)">70</button></div>
+            <div class="col-2"><button class="btn btn-primary" onclick="nivel(80)">80</button></div>
+            <div class="col-2"><button class="btn btn-primary" onclick="nivel(140)">140</button></div>
+        </div>
+    </div>
 </body>
 
 </html>
